@@ -16,18 +16,6 @@ public class CustomerRank {
         this.rank = rank;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
-    }
-
-    public void setTotalSpent(BigDecimal totalSpent) {
-        this.totalSpent = totalSpent;
-    }
-
-    public void setRank(int rank) {
-        this.rank = rank;
-    }
-
     public int getCustomerId() {
         return customerId;
     }
@@ -38,5 +26,15 @@ public class CustomerRank {
 
     public int getRank() {
         return rank;
+    }
+
+    public void setCustomerId(int customerId) { this.customerId = customerId; }
+
+    public void setTotalSpent(BigDecimal totalSpent) {
+        this.totalSpent = totalSpent;
+    }
+
+    public void setRank(int rank) {
+        this.rank = rank;
     }
 }

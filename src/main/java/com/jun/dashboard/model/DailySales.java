@@ -29,9 +29,7 @@ public class DailySales {
         return orderCount;
     }
 
-    public void setSaleDate(LocalDate saleDate) {
-        this.saleDate = saleDate;
-    }
+    public void setSaleDate(LocalDate saleDate) { this.saleDate = saleDate; }
 
     public void setTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;

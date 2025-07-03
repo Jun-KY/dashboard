@@ -53,8 +53,9 @@ public class DashboardRepository {
 
     public void saveSale(LocalDate saleDate, int customerId, BigDecimal amount){
         jdbcTemplate.update(
-                "INSERT INTO sales (sale_data, customer_id, amount) VALUES (?, ?, ?)",
-                saleDate, customerId, amount);
+                "INSERT INTO sales (sale_date, customer_id, amount) VALUES (?, ?, ?)",
+                saleDate, customerId, amount
+        );
 
     }
 }
