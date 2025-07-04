@@ -2,6 +2,7 @@ package com.jun.dashboard.repository;
 
 import com.jun.dashboard.model.CustomerRank;
 import com.jun.dashboard.model.DailySales;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -52,11 +53,17 @@ public class DashboardRepository {
     }
 
     public void saveSale(LocalDate saleDate, int customerId, BigDecimal amount){
-        jdbcTemplate.update(
-                "INSERT INTO sales (sale_date, customer_id, amount) VALUES (?, ?, ?)",
-                saleDate, customerId, amount
-        );
+        try{
+            jdbcTemplate.update(
+                    "INSERT INTO sales (sale_date, customer_id, amount) VALUES (?, ?, ?)",
+                    saleDate, customerId, amount
+            );
+        }catch(DataIntegrityViolationException e){
+                System.out.println("Big number");
+                e.getStackTrace();
 
+        }
     }
 }
+
 
